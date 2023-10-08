@@ -25,18 +25,22 @@ Project files. Please use DGUS application to open/edit the project
 
 # How to
 1. Download the DGUS application/IDE from their official site:
-https://www.dwin-global.com/tool-page/
-Look for the app: DGUS_VXXXX where the last digits are the version of the IDE
+https://www.dwin-global.com/uploads/DGUS_V7646.zip
+
+A copy of the zip is available in the Resources folder in case their site isn't available
+but try to get their latest version from their site.
+
+Extract the contents to your drive. Any location will do.
 
 1. Also, download the fonts used in the screens:
-https://fonts.google.com/noto/specimen/Noto+Sans?query=noto+sans&subset=latin&noto.script=Latn
+https://fontsgeek.com/fonts/Geneva-Regular
 
-1. If want to to change the UI or create new screens, create or edit the images first.
+1. If you want to to change the UI or create new screens, create or edit the images first.
 Preferrably use psd files so it is editable later. Then generate the jpeg files.
 Save the files in the images folder.
 
 1. Open the DWprj.hmi in the IDE
-The IDE is named as "DGUS_VXXXX.exe" with the current version number.
+The IDE is named as "DGUS_VXXXX.exe".
 
 1. In the Welcome tab, click the ICL generator.
 
@@ -60,3 +64,17 @@ If you created a new page, add that page (jpg) file first.
 1. Copy the contents of DGWIN_SET folder, except for the jpg files to your SD Card.
 Save those files inside DGWIN_SET folder in the root of the card.
 Use this to flash the display device.
+
+# About SD Cards
+1. Format your SD Card to FAT32 and with allocation: 4096KB 
+IMPORTANT: Using a different allocation (i.e. 32) will not be compatible with the display device
+
+# Serial Command (VP) Codes and Addresses
+The screen firmware MUST match the board's (Marlin) firmware.
+In the Marlin code, please refer to the following file for the VP command codes and data addresses:
+\Marlin\src\lcd\e3v2\creality\LCD_RTS.h
+
+For example:
+VP 0x1036 : E0 Nozzle Temp
+VP 0x1052 : E1 Nozzle Temp
+
